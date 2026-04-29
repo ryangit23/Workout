@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  body {
+    @apply bg-gray-950 text-white;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    opacity: 1;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-3 py-2 rounded-lg font-medium text-sm transition-colors duration-150 select-none;
+  }
+  .btn-primary {
+    @apply btn bg-blue-600 hover:bg-blue-500 active:bg-blue-700 text-white;
+  }
+  .btn-secondary {
+    @apply btn bg-gray-700 hover:bg-gray-600 active:bg-gray-800 text-gray-200;
+  }
+  .btn-danger {
+    @apply btn bg-red-700 hover:bg-red-600 active:bg-red-800 text-white;
+  }
+  .btn-ghost {
+    @apply btn bg-transparent hover:bg-gray-700 active:bg-gray-800 text-gray-300;
+  }
+  .input {
+    @apply bg-gray-700 border border-gray-600 rounded-lg px-3 py-2 text-white text-sm
+           focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500
+           placeholder-gray-400 w-full;
+  }
+  .panel {
+    @apply bg-gray-900 flex flex-col overflow-hidden;
+  }
+  .card {
+    @apply bg-gray-800 rounded-xl border border-gray-700;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-600 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500;
+}
+
+/* Drag overlay */
+.dragging-overlay {
+  @apply opacity-90 shadow-2xl shadow-blue-500/20 scale-105;
+  cursor: grabbing !important;
+}
